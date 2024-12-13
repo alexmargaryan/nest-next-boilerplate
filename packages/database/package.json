@@ -1,0 +1,37 @@
+{
+  "name": "@nest-next/database",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/client.cjs",
+  "module": "./dist/client.js",
+  "types": "./src/client.d.ts",
+  "scripts": {
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:seed": "tsx src/seed.ts",
+    "dev": "tsup src/client.ts --format cjs,esm --dts --watch",
+    "build": "tsup src/client.ts --format cjs,esm --dts",
+    "format": "prisma format",
+    "generate": "prisma generate",
+    "lint": "eslint . --max-warnings 0",
+    "prebuild": "npm run generate",
+    "predev": "npm run generate",
+    "studio": "prisma studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.0.1"
+  },
+  "devDependencies": {
+    "@nest-next/eslint-config": "workspace:*",
+    "@nest-next/typescript-config": "workspace:*",
+    "eslint": "^9.16.0",
+    "prisma": "^6.0.1",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
